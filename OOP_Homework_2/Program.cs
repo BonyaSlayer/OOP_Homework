@@ -1,18 +1,11 @@
 ﻿using OOP_Homework_2;
 
 
-BankCount mycount = new BankCount();
-BankCount mycount2 = new BankCount();
-BankCount mycount3 = new BankCount();
-
-
-mycount.GenerateAccountNumber();
+BankCount mycount = new BankCount(BankCount.counttype.dollar);
 mycount.PrintCount();
-
-mycount2.GenerateAccountNumber();
+BankCount mycount2 = new BankCount(500);
 mycount2.PrintCount();
-
-mycount3.GenerateAccountNumber();
+BankCount mycount3 = new BankCount(1000, BankCount.counttype.euro);
 mycount3.PrintCount();
 
 Console.ReadKey(true);

@@ -23,6 +23,23 @@ namespace OOP_Homework_2
             dollar,
             euro,
         }
+        public BankCount(int balance)
+        {
+            this.balance = balance;
+            GenerateAccountNumber();
+        }
+        public BankCount(counttype typeofcount)
+        {
+            this.typeofcount = typeofcount;
+            GenerateAccountNumber();
+        }
+        public BankCount(int balance, counttype typeofcount)
+        {
+            this.balance = balance;
+            this.typeofcount = typeofcount;
+            GenerateAccountNumber();
+        }
+
         /// <summary>
         /// Метод генерации номера счета
         /// </summary>
@@ -33,25 +50,10 @@ namespace OOP_Homework_2
 
         }      
         
+       
         /// <summary>
-        /// Метод заполнения полей счета
+        /// Печать счета
         /// </summary>
-        /// <param name="value1">Номер счета</param>
-        /// <param name="value2">Баланс</param>
-        /// <param name="value3">Тип 0-2</param>
-        /// <returns></returns>
-        public void SetCount(int balance, int type)
-        {
-            //this.count = value1;
-            count++;
-            this.accountNumber = count;
-            this.balance = balance;
-            this.typeofcount = (counttype)type;
-            
-            
-        }
-        
-
         public void PrintCount()
         {
             Console.WriteLine($" Ваш тип счета: {typeofcount}\n Ваш номер счета: {accountNumber}\n Ваш баланс: {balance}\n ");

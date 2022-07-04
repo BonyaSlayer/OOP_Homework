@@ -40,6 +40,27 @@ namespace OOP_Homework_2
             GenerateAccountNumber();
         }
 
+        public void GetMoney()
+        {
+            Console.Write($"Введите сумму для снятия:");
+            int money = int.Parse(Console.ReadLine());
+            if (this.balance >= money)
+            {
+                this.balance = balance - money;
+                Console.WriteLine($"Cумма успешно снята!");
+            }
+            else { Console.WriteLine("Недостаточно средств!"); }
+        }
+
+        public void AddMoney()
+        {
+            Console.Write($"Введите сумму для пополнения:");
+            int money = int.Parse(Console.ReadLine());
+            this.balance = balance + money;
+            Console.WriteLine($"Баланс успешно пополнен!");
+
+        }
+
         /// <summary>
         /// Метод генерации номера счета
         /// </summary>
@@ -48,8 +69,7 @@ namespace OOP_Homework_2
             count = count+1;
             this.accountNumber = count;
 
-        }      
-        
+        }             
        
         /// <summary>
         /// Печать счета

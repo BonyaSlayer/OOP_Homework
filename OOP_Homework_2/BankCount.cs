@@ -8,13 +8,13 @@ namespace OOP_Homework_2
 {
     public class BankCount
     {
-       private   int accountNumber;
+       private int accountNumber;
 
        private static int count;
 
-       private int balance;
+       private decimal balance;
 
-       private counttype typeofcount;
+       private counttype typeOfCount;
        
 
        public enum counttype
@@ -30,35 +30,27 @@ namespace OOP_Homework_2
         }
         public BankCount(counttype typeofcount)
         {
-            this.typeofcount = typeofcount;
+            this.typeOfCount = typeofcount;
             GenerateAccountNumber();
         }
         public BankCount(int balance, counttype typeofcount)
         {
             this.balance = balance;
-            this.typeofcount = typeofcount;
+            this.typeOfCount = typeofcount;
             GenerateAccountNumber();
         }
 
-        public void GetMoney()
-        {
-            Console.Write($"Введите сумму для снятия:");
-            int money = int.Parse(Console.ReadLine());
+        public void GetMoney(decimal money)
+        {            
             if (this.balance >= money)
             {
-                this.balance = balance - money;
-                Console.WriteLine($"Cумма успешно снята!");
-            }
-            else { Console.WriteLine("Недостаточно средств!"); }
+                this.balance = balance - money;               
+            }           
         }
 
-        public void AddMoney()
-        {
-            Console.Write($"Введите сумму для пополнения:");
-            int money = int.Parse(Console.ReadLine());
-            this.balance = balance + money;
-            Console.WriteLine($"Баланс успешно пополнен!");
-
+        public void AddMoney(decimal money)
+        {            
+            this.balance = balance + money;           
         }
 
         /// <summary>
@@ -76,12 +68,12 @@ namespace OOP_Homework_2
         /// </summary>
         public void PrintCount()
         {
-            Console.WriteLine($" Ваш тип счета: {typeofcount}\n Ваш номер счета: {accountNumber}\n Ваш баланс: {balance}\n ");
+            Console.WriteLine($" Ваш тип счета: {typeOfCount}\n Ваш номер счета: {accountNumber}\n Ваш баланс: {balance}\n ");
 
         }
         public int AccountNumber { get { return accountNumber; } set { accountNumber = value; } }
-        public int Balance { get { return balance; } set { balance = value; } }
-        public counttype TypeofCount { get { return typeofcount; } set { typeofcount = value; } }
+        public decimal Balance { get { return balance; } set { balance = value; } }
+        public counttype TypeofCount { get { return typeOfCount; } set { typeOfCount = value; } }
 
 
     }

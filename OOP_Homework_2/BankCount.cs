@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_Homework_2
+namespace OOP_Homework
 {
     public class BankCount
     {

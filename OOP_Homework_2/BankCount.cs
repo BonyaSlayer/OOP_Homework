@@ -33,13 +33,40 @@ namespace OOP_Homework_2
             this.typeOfCount = typeofcount;
             GenerateAccountNumber();
         }
+        /// <summary>
+        /// Конструктор счета
+        /// </summary>
+        /// <param name="balance">Баланс</param>
+        /// <param name="typeofcount">Тип счета</param>
         public BankCount(int balance, counttype typeofcount)
         {
             this.balance = balance;
             this.typeOfCount = typeofcount;
             GenerateAccountNumber();
         }
+        /// <summary>
+        /// Метод списания суммы с счета
+        /// </summary>
+        /// <param name="mycount">сслыка на объект</param>
+        /// <param name="money">сумма</param>
+        /// <returns></returns>
+        public bool TransferMoney(BankCount mycount, decimal money)
+        {
+            if(money > mycount.balance)
+            {
+                return false;
+            }
+            else
+            {
+                mycount.balance = balance - money;
+                return true;
+            }
+        }
 
+        /// <summary>
+        /// Метод списания денег
+        /// </summary>
+        /// <param name="money">Сумма для списания</param>
         public void GetMoney(decimal money)
         {            
             if (this.balance >= money)
@@ -47,7 +74,10 @@ namespace OOP_Homework_2
                 this.balance = balance - money;               
             }           
         }
-
+        /// <summary>
+        /// Метод зачисления денег
+        /// </summary>
+        /// <param name="money">Сумма для зачисления</param>
         public void AddMoney(decimal money)
         {            
             this.balance = balance + money;           

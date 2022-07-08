@@ -23,7 +23,7 @@ namespace OOP_Homework
             dollar,
             euro,
         }
-        public BankCount(int balance)
+        public BankCount(decimal balance)
         {
             this.balance = balance;
             GenerateAccountNumber();
@@ -38,7 +38,7 @@ namespace OOP_Homework
         /// </summary>
         /// <param name="balance">Баланс</param>
         /// <param name="typeofcount">Тип счета</param>
-        public BankCount(int balance, counttype typeofcount)
+        public BankCount(decimal balance, counttype typeofcount)
         {
             this.balance = balance;
             this.typeOfCount = typeofcount;
@@ -52,13 +52,14 @@ namespace OOP_Homework
         /// <returns></returns>
         public bool TransferMoney(BankCount mycount, decimal money)
         {
-            if(money > mycount.balance)
+            if(money > this.balance)
             {
                 return false;
             }
             else
             {
-                mycount.balance = balance - money;
+                this.balance -= money;
+                mycount.balance += money;
                 return true;
             }
         }

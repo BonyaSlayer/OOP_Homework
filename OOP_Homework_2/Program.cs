@@ -1,20 +1,37 @@
-﻿using OOP_Homework_2;
+﻿using OOP_Homework;
+using System.Linq;
 
 
-BankCount mycount = new BankCount(BankCount.counttype.dollar);
+BankCount mycount = new BankCount(500, BankCount.counttype.rub);
+BankCount mycount2 = new BankCount(500, BankCount.counttype.rub);
 mycount.PrintCount();
-
-BankCount mycount2 = new BankCount(500);
+mycount2.PrintCount();
+mycount2.TransferMoney(mycount, 100);
+mycount.PrintCount();
 mycount2.PrintCount();
 
-BankCount mycount3 = new BankCount(1000, BankCount.counttype.euro);
-mycount3.PrintCount();
+string s = "апож";
 
-BankCount mycount4 = new BankCount(5000, BankCount.counttype.rub);
-mycount4.PrintCount();
-mycount4.GetMoney(500);
-mycount4.PrintCount();
-mycount4.AddMoney(1300);
-mycount4.PrintCount();
+//Метод с использованием стандартной библиотеки
+string ReverseString2(ref string s)
+    {
+        return new string(s.Reverse().ToArray());
+    }
+
+ReverseString reverse = new ReverseString();
+Console.WriteLine(ReverseString.ReverseWord(ref s));
+Console.WriteLine(ReverseString2(ref s));
+
+
+
+SearchMail search = new SearchMail();
+StreamReader sr = new StreamReader("D:\\HomeWorkDir\\filename.txt");
+StreamWriter sw = new StreamWriter("D:\\HomeWorkDir\\email.txt");
+string line = sr.ReadLine();
+sw.WriteLine(search.SearchTheMail(ref line));
+string line2 = sr.ReadLine();
+sw.WriteLine(search.SearchTheMail(ref line2));
+sw.Close();
+sr.Close();
 
 Console.ReadKey(true);

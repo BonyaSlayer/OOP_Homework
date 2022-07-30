@@ -8,19 +8,19 @@ namespace OOP_Homework
 {
     public class Building
     {
-        private int _id;
-        private double _height;
-        private double _floors;
-        private double _rooms;
-        private double _entrance;
+        private int _Id;
+        private double _Height;
+        private double _Floors;
+        private double _Rooms;
+        private double _Entrance;
         private static int count;
 
 
-        public int Id { get { return _id; } set { _id = value; } }
-        public double Height { get { return _height; } set { _height = value; } }
-        public double Floors { get { return _floors; } set { _floors = value; } }
-        public double Rooms { get { return _rooms; } set { _rooms = value; } }
-        public double Entrance { get { return _entrance; } set { _entrance = value; } }
+        public int Id { get { return _Id; } set { _Id = value; } }
+        public double Height { get { return _Height; } set { _Height = value; } }
+        public double Floors { get { return _Floors; } set { _Floors = value; } }
+        public double Rooms { get { return _Rooms; } set { _Rooms = value; } }
+        public double Entrance { get { return _Entrance; } set { _Entrance = value; } }
         /// <summary>
         /// Конуструктор
         /// </summary>       
@@ -42,7 +42,7 @@ namespace OOP_Homework
         private void GenerateId()
         {
             count = count + 1;
-            this._id = count;
+            this._Id = count;
 
         }
         /// <summary>

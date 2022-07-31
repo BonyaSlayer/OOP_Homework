@@ -2,12 +2,12 @@
 using System.Linq;
 
 
-Building building1 = new Building(14, 5, 45, 3);
-Building building2 = new Building(14, 5, 80, 4);
+var rationalNumber = new RationalNumber(1, 2);
+Console.WriteLine(rationalNumber.ToString());
 
+var sum = rationalNumber + rationalNumber;
+Console.WriteLine(sum.ToString());
 
-Console.WriteLine($"Высота одного подъезда в доме {building1.Id} = {Building.GetFloorHeight(building1)} м.");
-Console.WriteLine(Building.GetEntarnceRooms(building1));
-Console.WriteLine(Building.GetFloorRooms(building1));
+Console.WriteLine(rationalNumber.Equals(rationalNumber));
 
 Console.ReadKey(true);

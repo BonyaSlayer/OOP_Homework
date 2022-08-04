@@ -1,13 +1,17 @@
 ﻿using OOP_Homework;
-using System.Linq;
 
 
-var rationalNumber = new RationalNumber(1, 2);
-Console.WriteLine(rationalNumber.ToString());
+BankCount mycount1 = new BankCount(1000, BankCount.counttype.rub);
+BankCount mycount2 = new BankCount(2000, BankCount.counttype.rub);
 
-var sum = rationalNumber + rationalNumber;
-Console.WriteLine(sum.ToString());
+bool result1 = mycount1 == mycount2;
+bool result2 = mycount1 != mycount2;
 
-Console.WriteLine(rationalNumber.Equals(rationalNumber));
+string check = mycount1.ToString();
+Console.WriteLine(check);
+
+int hashCode1 = mycount1.GetHashCode();
+int hashCode2 = mycount2.GetHashCode();
+
 
 Console.ReadKey(true);

@@ -10,17 +10,18 @@ namespace OOP_Homework
     {
         private int _Id;
         private double _Height;
-        private double _Floors;
-        private double _Rooms;
-        private double _Entrance;
+        private int _Floors;
+        private int _Rooms;
+        private int _Entrance;
         private static int count;
 
 
         public int Id { get { return _Id; } set { _Id = value; } }
         public double Height { get { return _Height; } set { _Height = value; } }
-        public double Floors { get { return _Floors; } set { _Floors = value; } }
-        public double Rooms { get { return _Rooms; } set { _Rooms = value; } }
-        public double Entrance { get { return _Entrance; } set { _Entrance = value; } }
+        public int Floors { get { return _Floors; } set { _Floors = value; } }
+        public int Rooms { get { return _Rooms; } set { _Rooms = value; } }
+        public int Entrance { get { return _Entrance; } set { _Entrance = value; } }
+        
         /// <summary>
         /// Конуструктор
         /// </summary>       
@@ -28,7 +29,7 @@ namespace OOP_Homework
         /// <param name="floors">Этажность</param>
         /// <param name="rooms">колл-во квартир в доме</param>
         /// <param name="entrance">колл-во подъездов</param>
-        public Building( double height, double floors, double rooms, double entrance)
+        public Building( double height, int floors, int rooms, int entrance)
         {            
             Height = height;
             Floors = floors;
@@ -55,24 +56,26 @@ namespace OOP_Homework
             double floorHeight = building.Height / building.Floors;
             return floorHeight;
         }
+        
         /// <summary>
         /// Метод вычисления колл-ва квартир в подъезде
         /// </summary>
         /// <param name="building"></param>
         /// <returns></returns>
-        public static double GetEntarnceRooms (Building building)
+        public static int GetEntarnceRooms (Building building)
         {
-            double entarnceRooms = building.Rooms / building.Entrance;
+            int entarnceRooms = building.Rooms / building.Entrance;
             return entarnceRooms;
         }
+        
         /// <summary>
         /// Метод вычисления колл-ва квартир на этаже.
         /// </summary>
         /// <param name="building"></param>
         /// <returns></returns>
-        public static double GetFloorRooms(Building building)
+        public static int GetFloorRooms(Building building)
         {
-            double floorRooms = GetEntarnceRooms(building) / building.Floors;
+            int floorRooms = GetEntarnceRooms(building) / building.Floors;
             return floorRooms;
         }
     }

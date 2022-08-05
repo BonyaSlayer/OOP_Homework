@@ -71,12 +71,11 @@
         // Equals()
         public override bool Equals(object obj)
         {
-            if (!(obj is RationalNumber))
+            if (obj is not RationalNumber number)
             {
                 return false;
             }
 
-            var number = (RationalNumber)obj;
             return numerator == number.numerator &&
                    denominator == number.denominator;
         }
@@ -265,7 +264,7 @@
             {
                 return numerator.ToString();
             }
-            return numerator + "/" + denominator;
+            return $"{numerator }/{denominator}";
         }
     }
 }

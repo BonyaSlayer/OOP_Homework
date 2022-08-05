@@ -13,5 +13,10 @@ Console.WriteLine(check);
 int hashCode1 = mycount1.GetHashCode();
 int hashCode2 = mycount2.GetHashCode();
 
+Console.WriteLine(rationalNumber.Equals(rationalNumber));
+
+Console.WriteLine($"Высота одного этажа в доме {building1.Id} = {Building.GetFloorHeight(building1)} м.");
+Console.WriteLine(Building.GetEntarnceRooms(building1));
+Console.WriteLine(Building.GetFloorRooms(building1));
 
 Console.ReadKey(true);

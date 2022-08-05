@@ -264,7 +264,7 @@
             {
                 return numerator.ToString();
             }
-            return numerator + "/" + denominator;
+            return $"{numerator }/{denominator}";
         }
     }
 }

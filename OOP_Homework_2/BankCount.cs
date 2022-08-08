@@ -126,7 +126,7 @@ namespace OOP_Homework
         /// <returns></returns>
         public static bool operator != (BankCount mycount1, BankCount mycount2)
         {
-            return !Equals(mycount1, mycount2);
+            return !(mycount1 == mycount2);
         }
         /// <summary>
         /// Перегруженный метод, возвращает хеш-код аккаунта

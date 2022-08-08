@@ -102,6 +102,52 @@ namespace OOP_Homework
             Console.WriteLine($" Ваш тип счета: {typeOfCount}\n Ваш номер счета: {accountNumber}\n Ваш баланс: {balance}\n ");
 
         }
+
+        public override bool Equals(object obj)
+        {
+            if(obj is not BankCount acc) return false;
+            return this.accountNumber == acc.accountNumber;
+        }
+        /// <summary>
+        /// Переопределеный оператор для сравнения двух аккаунтов
+        /// </summary>
+        /// <param name="mycount1">акк1</param>
+        /// <param name="mycount2">акк2</param>
+        /// <returns></returns>
+        public static bool operator == (BankCount mycount1, BankCount mycount2)
+        {
+            return Equals(mycount1, mycount2);
+        }
+        /// <summary>
+        /// Переопределеный оператор для сравнения двух аккаунтов
+        /// </summary>
+        /// <param name="mycount1">акк1</param>
+        /// <param name="mycount2">акк2</param>
+        /// <returns></returns>
+        public static bool operator != (BankCount mycount1, BankCount mycount2)
+        {
+            return !(mycount1 == mycount2);
+        }
+        /// <summary>
+        /// Перегруженный метод, возвращает хеш-код аккаунта
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return count + accountNumber;
+        }
+        /// <summary>
+        /// Перегруженный метод, возвращает номер счета и баланс.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return ($"Номер счета: {accountNumber}\nБаланс: {balance}{typeOfCount} ");
+        }
+
+
+
+
         public int AccountNumber { get { return accountNumber; } set { accountNumber = value; } }
         public decimal Balance { get { return balance; } set { balance = value; } }
         public counttype TypeofCount { get { return typeOfCount; } set { typeOfCount = value; } }

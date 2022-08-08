@@ -105,15 +105,7 @@ namespace OOP_Homework
 
         public override bool Equals(object obj)
         {
-            BankCount acc;
-            try
-            {
-                acc = (BankCount)obj;
-            }
-            catch
-            {
-                return false;
-            }
+            if(obj is not BankCount acc) return false;
             return this.accountNumber == acc.accountNumber;
         }
         /// <summary>

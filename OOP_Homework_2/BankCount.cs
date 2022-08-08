@@ -150,7 +150,7 @@ namespace OOP_Homework
 
         public int AccountNumber { get { return accountNumber; } set { accountNumber = value; } }
         public decimal Balance { get { return balance; } set { balance = value; } }
-        public counttype TypeofCount { get { return typeOfCount; } set { typeOfCount = value; } }
+        public counttype TypeOfCount { get { return typeOfCount; } set { typeOfCount = value; } }
 
 
     }
